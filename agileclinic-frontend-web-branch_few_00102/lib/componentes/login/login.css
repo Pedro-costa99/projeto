@@ -1,0 +1,265 @@
+
+.container-login{
+    background-image: url('/img/saude-digital.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.image-center{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;    
+}
+
+.flex-login{
+    border-radius: 15px 50px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%, 0.9);
+    justify-self: center;
+    display: flex;
+    width: 60%;
+}
+
+#flex-login-cadastro, #form-login-cadastro-profissional, #form-login-cadastro-dados{
+    display: none;
+}
+
+
+
+.flex-texto-login{
+    padding-right: 20px;
+    width: 50%;
+    border-right-style: solid;
+    border-right-color: #0c8bc8;
+    border-right-width: 2px;
+    color: #999999;
+}
+
+.texto-destaque-login{
+    padding-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 30px;
+    line-height: normal;
+}
+
+.texto-detalhe-login{
+    padding-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;    
+    font-size: 16px;
+}
+
+#formLogin, #formReset, #form-login-cadastro-email{
+        margin-top: 30px;
+}
+
+.link-pagina-ativa-login{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.item-link-pagina-login{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    padding-bottom: 5px;
+    font-size: 10px;
+}
+
+.label-link-login{
+    color: #999999;
+    margin-bottom: 0px;
+    font-size: 14px;    
+}
+
+#btn-login{
+    margin-top: 30px;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important   
+}
+
+.img-logo-redes-sociais{
+    width: 20px;
+}
+
+.btn-redes-sociais{
+    width: 70%;
+}
+
+.texto-ou{
+    margin-top: 30px;
+    text-align: center;
+    color: #999999;;
+}
+
+.texto-ou p{
+    margin-top: 1rem;
+}
+
+.custom-control{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 14px;
+    padding-left: 0px;
+    align-content: space-between;
+}
+
+.manter-conectado{
+    position: absolute;
+    right: 0;
+}
+
+.input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important    
+}
+.teste{
+    position:absolute;
+    top: 10px;
+    right: 10px;
+    z-index:10;
+    border:none;
+    background:transparent;
+    outline:none;    
+}
+
+.form-control{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.fa-envelope, .fa-lock {
+    color: #0c8bc8;
+  }
+
+.item-link-login-ativo{
+    border-bottom-color: #0c8bc8;
+    color: #0c8bc8;
+}
+
+.item-link-login-desativo{
+    border-bottom-color: #999999;
+    color: #999999;
+}
+
+.flex-form-login{
+    width: 50%;
+    padding-left: 20px;
+}
+
+.texto-centralizado{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#logo-login {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.msg-login {
+    display: none;
+    width: 22vw;
+}
+
+.form-group a{
+    text-decoration: none;
+}
+
+#texto-bem-vindo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #088ac8;
+}
+
+.is-icon-success {
+    color: #48c774;
+}
+
+.esconder-icon {
+    display: none;
+}
+
+.link-login-reset-conetado{
+    text-decoration-style: double;
+    color: #0c8bc8;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #0c8bc8;
+    border-color: #0c8bc8;
+}
+
+#btn-cadastre-se{
+    margin-top: 40px;
+    background-color: #1bd16c;
+    color: white;
+}
+
+#label-manter-conectado{
+    color: #0c8bc8 !important;
+}
+
+.modalRespLogin{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 1234px){
+    .flex-login{
+        width: 70%;
+    }
+
+  }
+
+
+@media (max-width: 967px){
+    .flex-login{
+        width: 85%;
+    }
+
+}
+
+@media (max-width: 829px){
+    .flex-login{
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .flex-texto-login{
+        border-right-style: none;
+        border-right-color: none;
+        border-right-width: none;        
+        border-bottom-style: solid;
+        border-bottom-color: #0c8bc8;
+        border-bottom-width: 2px;
+        width: 90%;
+    }
+
+    .flex-form-login{
+        width: 90%;
+    }
+
+}

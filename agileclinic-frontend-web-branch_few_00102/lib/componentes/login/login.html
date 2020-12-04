@@ -1,0 +1,137 @@
+<div class="container-login">
+
+  <div id="flex-login-acesso" class="flex-login">
+    <div class="flex-texto-login">
+        <figure class="image">
+              <img class="image-center img-fluid" id="logo-login" src="img/logo-agileclinic-normal.png" alt="">
+        </figure>       
+        <div class="texto-destaque-login">
+          <p class="control">
+              Seja bem vindo ao sistema que agiliza a sua clínica.
+          </p>
+        </div>
+        <div class="texto-detalhe-login">
+          <p class="control">
+              Digite o sue usário e senha ou acesse
+              seu perfil através do seu cadastro no Google ou no Facebook.
+          </p>
+        </div>  
+        <div class="form-group">
+          <a [routerLink]="RoutePaths.cadastrologin.toUrl()">
+            <button id="btn-cadastre-se" type="button" class="image-center btn btn-block btn-redes-sociais shadow-sm bg-blue rounded" >
+              Cadastre-se Aqui
+            </button>            
+          </a> 
+        </div>                   
+    </div>
+    <div class="flex-form-login">
+      <div class="link-pagina-ativa-login">
+        <span id="item-link-login" class="item-link-pagina-login item-link-login-ativo">LOGIN NO SISTEMA</span>
+        <span id="iten-link-reset" class="item-link-pagina-login item-link-login-desativo">RECUPERAÇÃO DE SENHA</span>
+      </div>
+      <form id="formLogin"  #loginForm="ngForm">
+        <div class="form-group"> 
+          <label class="label-link-login" for="emailu">Email</label>
+          <div class="input-group">
+            <input class="form-control" id='emailu' type="email" placeholder="Digite o email" required 
+              [(ngModel)]="email"
+              #emailu="ngForm"
+            >
+            <span class="teste">
+              <i class="fas fa-envelope"></i>
+          </span>            
+          </div>        
+        </div>
+        <div class="form-group"> 
+          <label class="label-link-login" for="emailu">Senha</label>
+          <div class="input-group">
+            <input class="form-control" id='senhaId' type="password" placeholder="Digite a Senha"  required 
+            [(ngModel)]="senha"
+            #senhaId="ngForm"
+            [class.is-success]="senhaId.valid"
+            ngControl="senhaId"  
+            >
+            <span class="teste">
+              <i class="fas fa-lock"></i>
+            </span>             
+        </div>        
+        </div>  
+
+        <div class="form-group">
+          <button [disabled]="!senhaId.valid || !inputEmailValido" id="btn-login" type="button" class="btn btn-success btn-block" (click)="efetuarLogin()">Entrar</button>
+        </div>   
+
+        <div class="custom-control">
+          <div class="custom-switch">
+            <input id="switchConectado" name="switchConectado"  type="checkbox" class="custom-control-input " >
+            <label id="label-manter-conectado" class="custom-control-label" for="switchConectado">Manter-me Conectado!</label>
+          </div> 
+          <div class="manter-conectado">
+            <a (click)="alternaLoginReset('reset')"><p class="link-login-reset-conetado">Esqueceu a senha?</p></a>
+          </div>
+        </div>    
+
+        <div class="form-group">
+          <div #modalRespLogin  class="modalRespLogin msg-login alert alert-warning">                                                                                                                                    
+          </div>        
+        </div>        
+
+        <span class="texto-ou"><p>OU</p></span>
+
+        <div class="form-group">
+          <button id="btn-google" type="button" class="image-center btn btn-block btn-redes-sociais shadow-sm bg-white rounded" >
+            <img class="img-logo-redes-sociais" src="img/google.svg" alt="logo-google">
+            Entrar com Google
+          </button>
+        </div>  
+        
+        <div class="form-group ">
+          <button id="btn-facebook" type="button" class="image-center btn btn-block btn-redes-sociais shadow-sm bg-white rounded" >
+            <img class="img-logo-redes-sociais" src="img/facebook-app.svg" alt="logo-facebook">
+            Entrar com Facebook
+          </button>
+        </div>          
+        
+      </form>
+
+      <form id="formReset" #resetForm="ngForm">
+    
+        <div class="form-group"> 
+          <div class="form-group"> 
+            <label class="label-link-login" for="emailu">Email</label>
+            <div class="input-group">
+              <input class="form-control" id='emailur' type="email" placeholder="Digite o email" required 
+                [(ngModel)]="emailReset"
+                #resetForm="ngForm"
+              >
+              <span class="teste">
+                <i class="fas fa-envelope"></i>
+            </span>            
+            </div>        
+          </div>          
+        </div>
+
+
+        <div class="form-group">
+        <button [disabled]="!inputEmailValidoReset" type="button" class="btn btn-success btn-block" (click)="resetSenha()">Recuperar Senha</button>
+        </div>
+    
+        <div class="form-group">
+        <div #modalRespReset  class="modalRespLogin msg-login alert alert-warning">                                                                                                                                    
+        </div> 
+        </div>
+
+        <div class="form-group">
+        <a (click)="alternaLoginReset('login')" ><p class="link-login-reset-conetado texto-centralizado">Fazer Login!</p></a>
+        </div>      
+    
+      </form>  
+
+    </div>
+  </div>  
+
+
+</div>
+
+
+

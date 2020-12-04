@@ -1,0 +1,110 @@
+<div class="container-login">
+  <form id="formLogin"  #loginForm="ngForm">
+    <div class="elemento-login">
+      <div class="form-group">
+          <figure class="image">
+              <img id="logo-login" src="img/logo-agileclinic-normal.png" alt="">
+          </figure>            
+      </div>          
+      <div class="form-group">
+        <p id="texto-bem-vindo" class="control texto-centralizado">
+          Bom dia! Seja bem vindo.
+        </p>
+      </div>
+      <div class="form-group"> 
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend1">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+          <input class="form-control" id='emailu' type="email" placeholder="Email" aria-describedby="inputGroupPrepend1" required 
+            [(ngModel)]="email"
+            #emailu="ngForm"
+          >
+        </div>        
+      </div>
+      <div class="form-group"> 
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+          <input class="form-control" id='senhaId' type="password" placeholder="Senha" aria-describedby="inputGroupPrepend2" required 
+            [(ngModel)]="senha"
+            #senhaId="ngForm"
+            [class.is-success]="senhaId.valid"
+            ngControl="senhaId"  
+          >
+        </div>        
+      </div>  
+
+      <div class="form-group">
+        <button [disabled]="!senhaId.valid || !inputEmailValido" type="button" class="btn btn-success btn-block" (click)="efetuarLogin()">Login</button>
+      </div>   
+
+      <div class="form-group">
+        <div #modalRespLogin  class="modalRespLogin msg-login alert alert-warning">                                                                                                                                    
+        </div>        
+      </div>
+      
+<!--       <div class="form-group">
+        <input id="switchConectado" type="checkbox" name="switchConectado" class="switch is-outlined is-success">
+        <label class="link-login-reset-conetado" for="switchConectado">Manter-me conectado!</label>
+      </div> -->
+
+
+      <div class="custom-control custom-switch">
+        <input id="switchConectado" name="switchConectado"  type="checkbox" class="custom-control-input is-valid" >
+        <label class="custom-control-label" for="switchConectado">Manter-me Conectado!</label>
+      </div>            
+
+      <div class="form-group">
+        <a (click)="alternaLoginReset('reset')"><p class="link-login-reset-conetado texto-centralizado">Esqueceu a senha?</p></a>
+      </div>     
+    </div>
+  </form>
+
+  <form id="formReset" #resetForm="ngForm">
+    <div class="elemento-login">
+      <div class="form-group">
+        <figure class="image">
+          <img id="logo-login" src="img/logo-agileclinic-normal.png" alt="">
+        </figure>  
+      </div>
+  
+      <div class="form-group"> 
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend3">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+          <input class="form-control" id='emailur' type="email" placeholder="Email" aria-describedby="inputGroupPrepend3" required 
+            [(ngModel)]="emailReset"
+            #resetForm="ngForm"
+          >
+        </div>        
+      </div>
+
+ 
+      <div class="form-group">
+        <button [disabled]="!inputEmailValidoReset" type="button" class="btn btn-success btn-block" (click)="resetSenha()">Reset Senha</button>
+      </div>
+  
+      <div class="form-group">
+        <div #modalRespReset  class="modalRespLogin msg-login alert alert-warning">                                                                                                                                    
+        </div> 
+      </div>
+
+      <div class="form-group">
+        <a (click)="alternaLoginReset('login')" ><p class="link-login-reset-conetado texto-centralizado">Fazer Login!</p></a>
+      </div>      
+ 
+    </div>
+  </form>
+</div>
+
+
+

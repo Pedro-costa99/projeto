@@ -1,0 +1,134 @@
+<div class="container-login">
+
+  <div id="flex-login-acesso" class="flex-login">
+    <div class="flex-texto-login">
+        <figure class="image">
+              <img class="image-center img-fluid" id="logo-login" src="img/logo-agileclinic-normal.png" alt="">
+        </figure>       
+        <div class="texto-destaque-login">
+          <p class="control">
+              Seja bem vindo ao sistema que agiliza a sua clínica.
+          </p>
+        </div>
+        <div class="texto-detalhe-login">
+          <p class="control">
+              Realize seu cadastre e comece uma nova etapa na gestão e no controle dos seus processo.
+          </p>
+        </div>  
+        <div class="form-group">
+          <a [routerLink]="RoutePaths.login.toUrl()">
+            <button id="btn-cadastre-se" type="button" class="image-center btn btn-block btn-redes-sociais shadow-sm bg-blue rounded" >
+              Entre no Sistema
+            </button>            
+          </a> 
+        </div>          
+    </div>
+    <div class="flex-form-login">
+      <div class="link-pagina-ativa-login">
+        <span id="item-link-email" class="item-link-pagina-login item-link-login-ativo">SEU EMAIL</span>
+        <span id="item-link-dados" class="item-link-pagina-login item-link-login-desativo">DADOS PESSOAIS</span>
+        <span id="item-link-perfil" class="item-link-pagina-login item-link-login-desativo">SEU PERFIL</span>
+      </div>
+
+      <form id="form-cadastro-email"  #loginForm="ngForm">
+        <div class="form-group"> 
+          <label class="label-link-login" for="emailu">Email</label>
+          <div class="input-group">
+            <input class="form-control" id='emailu' type="email" placeholder="Digite o email" required 
+              [(ngModel)]="email"
+              #emailu="ngForm"
+            >
+            <span class="teste">
+              <i class="fas fa-envelope"></i>
+          </span>            
+          </div>        
+        </div>
+
+
+        <div class="form-group">
+          <button [disabled]="!inputEmailValido" id="btn-login" type="button" class="btn btn-success btn-block" (click)='alternaTelaCadastro("dados")'>Próximo</button>
+        </div>   
+
+        <div class="form-group">
+          <div #modalRespLogin  class="modalRespLogin msg-login alert alert-warning">                                                                                                                                    
+          </div>        
+        </div>        
+
+        <span class="texto-ou"><p>OU</p></span>
+
+        <div class="form-group">
+          <button id="btn-google" type="button" class="image-center btn btn-block btn-redes-sociais shadow-sm bg-white rounded" >
+            <img class="img-logo-redes-sociais" src="img/google.svg" alt="logo-google">
+            Cadastrar com Google
+          </button>
+        </div>  
+        
+        <div class="form-group ">
+          <button id="btn-facebook" type="button" class="image-center btn btn-block btn-redes-sociais shadow-sm bg-white rounded" >
+            <img class="img-logo-redes-sociais" src="img/facebook-app.svg" alt="logo-facebook">
+            Cadastrar com Facebook
+          </button>
+        </div>          
+
+      </form>
+
+      <form id="form-cadastro-dados"  #loginForm="ngForm">
+        <div class="form-group"> 
+          <label class="label-link-login" for="emailu">Email</label>
+          <div class="input-group">
+            <input class="form-control" id='emailu' type="email" placeholder="Digite o email" required 
+              [(ngModel)]="email"
+              #emailu="ngForm"
+            >
+            <span class="teste">
+              <i class="fas fa-envelope"></i>
+          </span>            
+          </div>        
+        </div>
+
+
+        <div class="form-group">
+          <button id="btn-login" type="button" class="btn btn-block" (click)='alternaTelaCadastro("email")'>Voltar</button>
+          <button [disabled]="!inputEmailValido" id="btn-login" type="button" class="btn btn-success btn-block" (click)='alternaTelaCadastro("perfil")'>Próximo</button>
+        </div>   
+
+        <div class="form-group">
+          <div #modalRespLogin  class="modalRespLogin msg-login alert alert-warning">                                                                                                                                    
+          </div>        
+        </div>        
+
+      </form>
+      
+      <form id="form-cadastro-profissional"  #loginForm="ngForm">
+        <div class="form-group"> 
+          <label class="label-link-login" for="emailu">Email</label>
+          <div class="input-group">
+            <input class="form-control" id='emailu' type="email" placeholder="Digite o email" required 
+              [(ngModel)]="email"
+              #emailu="ngForm"
+            >
+            <span class="teste">
+              <i class="fas fa-envelope"></i>
+          </span>            
+          </div>        
+        </div>
+
+
+        <div class="form-group">
+          <button id="btn-login" type="button" class="btn btn-block" (click)='alternaTelaCadastro("dados")'>Voltar</button>
+          <button [disabled]="!inputEmailValido" id="btn-login" type="button" class="btn btn-success btn-block" >Cadastrar</button>
+        </div>   
+
+        <div class="form-group">
+          <div #modalRespLogin  class="modalRespLogin msg-login alert alert-warning">                                                                                                                                    
+          </div>        
+        </div>        
+
+      </form>      
+
+    </div>
+  </div>  
+</div>
+
+
+
